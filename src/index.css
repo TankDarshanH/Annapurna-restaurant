@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+body {
+  background-color: #ffffff;
+  color: black;
+}
+
+.playfair-display {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+button:active {
+  background-color: #2563eb;
+  transform: scale(0.95);
+  transition: transform 0.1s ease-in-out, background-color 0.1s ease-in-out;
+}
+
+.add-to-cart:active {
+  background-color: #1e40af;
+}
