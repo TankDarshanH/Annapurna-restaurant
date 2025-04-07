@@ -1,16 +1,26 @@
 import { useCart } from "../CartContext";
 
+// Importing images using Vite-compatible method
+import pavBhaji from "../images/Fast-food/pav-bhaji.jpg";
+import vadaPav from "../images/Fast-food/Vada Pav.jpg";
+import sevPuri from "../images/Fast-food/sev-puri.jpg";
+import alooTikkiChaat from "../images/Fast-food/Aloo Tikki Chaat.jpg";
+import frenchFries from "../images/Fast-food/French-Fries.webp";
+import friedMomos from "../images/Fast-food/fried-momos.jpg";
+import hakkaNoodles from "../images/Fast-food/hakka-noodles.jpg";
+import springRoll from "../images/Fast-food/spring-roll.jpg";
+
 const fastfoodItems = [
   {
     id: 21,
-    image: "src/images/Fast-food/pav-bhaji.jpg",
+    image: pavBhaji,
     title: "Pav Bhaji",
     price: 100,
     description: "2 soft pav with 200 gram bhaji",
   },
   {
     id: 22,
-    image: "src/images/Fast-food/Vada Pav.jpg",
+    image: vadaPav,
     title: "Vada Pav",
     price: 30,
     description:
@@ -18,7 +28,7 @@ const fastfoodItems = [
   },
   {
     id: 23,
-    image: "src/images/Fast-food/sev-puri.jpg",
+    image: sevPuri,
     title: "Sevpuri",
     price: 50,
     description:
@@ -26,7 +36,7 @@ const fastfoodItems = [
   },
   {
     id: 24,
-    image: "src/images/Fast-food/Aloo Tikki Chaat.jpg",
+    image: alooTikkiChaat,
     title: "Aloo Tikki Chaat",
     price: 40,
     description:
@@ -34,7 +44,7 @@ const fastfoodItems = [
   },
   {
     id: 25,
-    image: "src/images/Fast-food/French-Fries.webp",
+    image: frenchFries,
     title: "French Fries",
     price: 100,
     description:
@@ -42,7 +52,7 @@ const fastfoodItems = [
   },
   {
     id: 26,
-    image: "src/images/Fast-food/fried-momos.jpg",
+    image: friedMomos,
     title: "Fried Momos",
     price: 100,
     description:
@@ -50,7 +60,7 @@ const fastfoodItems = [
   },
   {
     id: 27,
-    image: "src/images/Fast-food/hakka-noodles.jpg",
+    image: hakkaNoodles,
     title: "Hakka Noodles",
     price: 100,
     description:
@@ -58,7 +68,7 @@ const fastfoodItems = [
   },
   {
     id: 28,
-    image: "src/images/Fast-food/spring-roll.jpg",
+    image: springRoll,
     title: "Spring Roll",
     price: 150,
     description:
@@ -67,7 +77,7 @@ const fastfoodItems = [
 ];
 
 const Fastfood = () => {
-  const { addToCart } = useCart(); // Get addToCart function from CartContext
+  const { addToCart } = useCart();
 
   return (
     <section className="px-6 py-6">
@@ -86,7 +96,7 @@ const Fastfood = () => {
               className="rounded-3xl w-60 h-60 object-cover"
             />
             <h1 className="text-red-600 font-semibold p-2">{item.title}</h1>
-            <p className="font-bold">₹{item.price} </p>
+            <p className="font-bold">₹{item.price}</p>
             <p className="text-blue-600">{item.description}</p>
             <button
               className="mt-3 px-4 py-2 bg-blue-500 text-white rounded-lg text-lg w-full"

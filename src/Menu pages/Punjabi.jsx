@@ -1,44 +1,52 @@
 import { useCart } from "../CartContext";
 
+// Image imports
+import alooParatha from "../images/Punjabi-items/Aloo Paratha with Curd & Pickle.jpg";
+import choleBhature from "../images/Punjabi-items/chole-bhature.jpg";
+import dalMakhani from "../images/Punjabi-items/dal-makhani.jpg";
+import paneerButterMasala from "../images/Punjabi-items/paneer-butter-masala.webp";
+import tandooriRoti from "../images/Punjabi-items/Tandoori-Roti-Butter.jpg";
+import punjabiThali from "../images/Punjabi-items/North Indian Thali.webp";
+
 const punjabiItems = [
   {
     id: 8,
-    image: "src/images/Punjabi-items/Aloo Paratha with Curd & Pickle.jpg",
+    image: alooParatha,
     title: "Aloo Paratha, Curd & Pickle",
     price: 150,
     description: "Curd - 250 grams, Aloo Paratha 1 pc",
   },
   {
     id: 9,
-    image: "src/images/Punjabi-items/chole-bhature.jpg",
+    image: choleBhature,
     title: "Chole Bhature",
     price: 100,
     description: "Chole - 200 gram, Bhature 2 pcs",
   },
   {
     id: 10,
-    image: "src/images/Punjabi-items/dal-makhani.jpg",
+    image: dalMakhani,
     title: "Dal Makhani",
     price: 200,
     description: "500 gram",
   },
   {
     id: 11,
-    image: "src/images/Punjabi-items/paneer-butter-masala.webp",
+    image: paneerButterMasala,
     title: "Paneer Butter Masala",
     price: 225,
     description: "400 gram",
   },
   {
     id: 12,
-    image: "src/images/Punjabi-items/Tandoori-Roti-Butter.jpg",
+    image: tandooriRoti,
     title: "Tandoori Roti",
     price: 125,
     description: "5 pcs",
   },
   {
     id: 13,
-    image: "src/images/Punjabi-items/North Indian Thali.webp",
+    image: punjabiThali,
     title: "Punjabi Thali",
     price: 300,
     description:
@@ -47,7 +55,7 @@ const punjabiItems = [
 ];
 
 const Punjabi = () => {
-  const { addToCart } = useCart(); // Get addToCart function from CartContext
+  const { addToCart } = useCart();
 
   return (
     <section className="px-6 py-6">

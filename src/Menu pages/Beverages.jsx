@@ -1,58 +1,68 @@
 import { useCart } from "../CartContext";
 
+// ✅ Importing images from src/images/Beverages
+import badamMilk from "../images/Beverages/badam-milk.webp";
+import coldCoffee from "../images/Beverages/cold-coffee.jpg";
+import mangoLassi from "../images/Beverages/mango-lassi.webp";
+import masalaChhas from "../images/Beverages/Masala chhas (Buttermilk).jpg";
+import mintMojito from "../images/Beverages/mint-mojito.jpg";
+import sprite from "../images/Beverages/sprite.png";
+import strawberryMilkshake from "../images/Beverages/Strawberry-Milkshake.jpg";
+import sugarCaneJuice from "../images/Beverages/sugar-cane-juice.webp";
+
 const beveragesItems = [
   {
     id: 43,
-    image: "/src/images/Beverages/badam-milk.webp",
+    image: badamMilk,
     title: "Badam Milk",
     price: 60,
     description: "200 ml",
   },
   {
     id: 44,
-    image: "/src/images/Beverages/cold-coffee.jpg",
+    image: coldCoffee,
     title: "Cold-Coffee",
     price: 250,
     description: "150 ml",
   },
   {
     id: 45,
-    image: "/src/images/Beverages/mango-lassi.webp",
+    image: mangoLassi,
     title: "Mango Lassi",
     price: 75,
     description: "200 ml",
   },
   {
     id: 46,
-    image: "/src/images/Beverages/Masala chhas (Buttermilk).jpg",
+    image: masalaChhas,
     title: "Masala Chhas",
     price: 35,
     description: "300 ml",
   },
   {
     id: 47,
-    image: "/src/images/Beverages/mint-mojito.jpg",
+    image: mintMojito,
     title: "Mint Mojito",
     price: 200,
     description: "190 ml",
   },
   {
     id: 48,
-    image: "/src/images/Beverages/sprite.png",
+    image: sprite,
     title: "Sprite",
     price: 10,
     description: "250 ml",
   },
   {
     id: 49,
-    image: "/src/images/Beverages/Strawberry-Milkshake.jpg",
+    image: strawberryMilkshake,
     title: "Strawberry Milkshake",
     price: 100,
     description: "300 ml",
   },
   {
     id: 50,
-    image: "/src/images/Beverages/sugar-cane-juice.webp",
+    image: sugarCaneJuice,
     title: "Sugarcane Juice",
     price: 40,
     description: "750 ml",
@@ -60,7 +70,7 @@ const beveragesItems = [
 ];
 
 const Beverages = () => {
-  const { addToCart } = useCart(); // Get the addToCart function from CartContext
+  const { addToCart } = useCart();
 
   return (
     <section className="px-6 py-6">

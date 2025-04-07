@@ -1,16 +1,25 @@
 import { useCart } from "../CartContext";
 
+// Image imports
+import undhiyu from "../images/Gujrati-items/undhiyu.jpg";
+import gujaratiThali from "../images/Gujrati-items/Gujarati-thali.jpg";
+import patra from "../images/Gujrati-items/Patra.jpg";
+import thepalaChundo from "../images/Gujrati-items/Thepala-Chundo.webp";
+import bajaraRotBharta from "../images/Gujrati-items/Bajara-rotalo & baigan bharta.jpg";
+import dalDhokli from "../images/Gujrati-items/Dal-dhokli.jpg";
+import kadhiRice from "../images/Gujrati-items/Gujarati-Kadhi-Rice.webp";
+
 const gujaratiItems = [
   {
     id: 1,
-    image: "src/images/Gujrati-items/undhiyu.jpg",
+    image: undhiyu,
     title: "Undhiyu Puri",
     price: 180,
     description: "Undhiyu - 250 grams, Puri 10 pc",
   },
   {
     id: 2,
-    image: "src/images/Gujrati-items/Gujarati-thali.jpg",
+    image: gujaratiThali,
     title: "Gujarati Thali",
     price: 250,
     description:
@@ -18,35 +27,35 @@ const gujaratiItems = [
   },
   {
     id: 3,
-    image: "src/images/Gujrati-items/Patra.jpg",
+    image: patra,
     title: "Patra",
     price: 100,
     description: "250 gram",
   },
   {
     id: 4,
-    image: "src/images/Gujrati-items/Thepala-Chundo.webp",
+    image: thepalaChundo,
     title: "Thepala Chundo",
     price: 75,
     description: "Chundo - 100 grams, Thepala 3 pc",
   },
   {
     id: 5,
-    image: "src/images/Gujrati-items/Bajara-rotalo & baigan bharta.jpg",
+    image: bajaraRotBharta,
     title: "Bajara Rotalo & Baigan Bharta",
     price: 150,
     description: "Baigan Bharta - 250 grams, Rotalo 1 pc",
   },
   {
     id: 6,
-    image: "src/images/Gujrati-items/Dal-dhokli.jpg",
+    image: dalDhokli,
     title: "Dal dhokli",
     price: 100,
     description: "250 gram",
   },
   {
     id: 7,
-    image: "src/images/Gujrati-items/Gujarati-Kadhi-Rice.webp",
+    image: kadhiRice,
     title: "Kadhi Rice",
     price: 80,
     description: "Kadhi - 200 ml, Rice - 150 gram",
@@ -54,7 +63,7 @@ const gujaratiItems = [
 ];
 
 const Gujarati = () => {
-  const { addToCart } = useCart(); // Get the addToCart function
+  const { addToCart } = useCart();
 
   return (
     <section className="px-6 py-6">
@@ -73,7 +82,7 @@ const Gujarati = () => {
               className="rounded-3xl w-60 h-60 object-cover"
             />
             <h1 className="text-red-600 font-semibold p-2">{item.title}</h1>
-            <p className="font-bold">₹{item.price} </p>
+            <p className="font-bold">₹{item.price}</p>
             <p className="text-blue-600">{item.description}</p>
             <button
               className="mt-3 px-4 py-2 bg-blue-500 text-white rounded-lg text-lg w-full"

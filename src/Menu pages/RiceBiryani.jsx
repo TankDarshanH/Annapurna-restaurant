@@ -1,9 +1,18 @@
 import { useCart } from "../CartContext";
 
+// Image imports
+import paneerBiryani from "../images/Rice & Biryani/Paneer Biryani.webp";
+import vegTawaPulao from "../images/Rice & Biryani/veg-tawa-pulao.jpg";
+import khichdiKadhi from "../images/Rice & Biryani/Gujarati Khichdi with Kadhi.jpg";
+import jeeraRiceDalTadka from "../images/Rice & Biryani/Jeera Rice & Dal Tadka.jpg";
+import tomatoRice from "../images/Rice & Biryani/Coimbatore-Style Tomato Rice.jpg";
+import hyderabadiVegBiryani from "../images/Rice & Biryani/Haderabadi veg dum- biriyani.jpg";
+import lemonRice from "../images/Rice & Biryani/Lemon Rice.jpg";
+
 const ricebiryaniItems = [
   {
     id: 29,
-    image: "src/images/Rice & Biryani/Paneer Biryani.webp",
+    image: paneerBiryani,
     title: "Paneer Biryani",
     price: 300,
     description:
@@ -11,7 +20,7 @@ const ricebiryaniItems = [
   },
   {
     id: 30,
-    image: "src/images/Rice & Biryani/veg-tawa-pulao.jpg",
+    image: vegTawaPulao,
     title: "Veg Tawa Pulao",
     price: 100,
     description:
@@ -19,7 +28,7 @@ const ricebiryaniItems = [
   },
   {
     id: 31,
-    image: "src/images/Rice & Biryani/Gujarati Khichdi with Kadhi.jpg",
+    image: khichdiKadhi,
     title: "Khichdi Kadhi",
     price: 50,
     description:
@@ -27,7 +36,7 @@ const ricebiryaniItems = [
   },
   {
     id: 32,
-    image: "src/images/Rice & Biryani/Jeera Rice & Dal Tadka.jpg",
+    image: jeeraRiceDalTadka,
     title: "Jeera Rice & Dal Tadka",
     price: 75,
     description:
@@ -35,7 +44,7 @@ const ricebiryaniItems = [
   },
   {
     id: 33,
-    image: "src/images/Rice & Biryani/Coimbatore-Style Tomato Rice.jpg",
+    image: tomatoRice,
     title: "Coimbatore-Style Tomato Rice",
     price: 125,
     description:
@@ -43,7 +52,7 @@ const ricebiryaniItems = [
   },
   {
     id: 34,
-    image: "src/images/Rice & Biryani/Haderabadi veg dum- biriyani.jpg",
+    image: hyderabadiVegBiryani,
     title: "Hyderabadi Veg Dum-Biryani",
     price: 400,
     description:
@@ -51,7 +60,7 @@ const ricebiryaniItems = [
   },
   {
     id: 35,
-    image: "src/images/Rice & Biryani/Lemon Rice.jpg",
+    image: lemonRice,
     title: "Lemon Rice",
     price: 100,
     description:
@@ -60,7 +69,7 @@ const ricebiryaniItems = [
 ];
 
 const RiceBiryani = () => {
-  const { addToCart } = useCart(); // Get addToCart function from CartContext
+  const { addToCart } = useCart();
 
   return (
     <section className="px-6 py-6">

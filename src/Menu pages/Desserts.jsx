@@ -1,51 +1,60 @@
 import { useCart } from "../CartContext";
 
+// ✅ Import dessert images
+import gajarHalwa from "../images/Desserts/gajar-halwa.jpg";
+import gulabJamun from "../images/Desserts/Gulab Jamun.webp";
+import jalebi from "../images/Desserts/jalebi.webp";
+import kulfi from "../images/Desserts/kesar Pista Kulfi.jpg";
+import shrikhand from "../images/Desserts/Kesar-pista-Shrikhand.jpg";
+import mangoPudding from "../images/Desserts/MangoPudding.jpg";
+import rasgulla from "../images/Desserts/rasgulla.jpg";
+
 const dessertItems = [
   {
     id: 36,
-    image: "src/images/Desserts/gajar-halwa.jpg",
+    image: gajarHalwa,
     title: "Gajar Halwa",
     price: 200,
     description: "250 grams",
   },
   {
     id: 37,
-    image: "src/images/Desserts/Gulab Jamun.webp",
+    image: gulabJamun,
     title: "Gulab Jamun",
     price: 50,
     description: "2 pcs",
   },
   {
     id: 38,
-    image: "src/images/Desserts/jalebi.webp",
+    image: jalebi,
     title: "Jalebi",
     price: 50,
     description: "250 gram",
   },
   {
     id: 39,
-    image: "src/images/Desserts/kesar Pista Kulfi.JPG",
+    image: kulfi,
     title: "Kesar Pista Kulfi",
     price: 100,
     description: "2 pcs",
   },
   {
     id: 40,
-    image: "src/images/Desserts/Kesar-pista-Shrikhand.jpg",
+    image: shrikhand,
     title: "Kesar Pista Shrikhand",
     price: 150,
     description: "250 gram",
   },
   {
     id: 41,
-    image: "src/images/Desserts/MangoPudding.jpg",
+    image: mangoPudding,
     title: "Mango Pudding",
     price: 300,
     description: "200 gram",
   },
   {
     id: 42,
-    image: "src/images/Desserts/rasgulla.jpg",
+    image: rasgulla,
     title: "Rasgulla",
     price: 200,
     description: "7 pc",
@@ -53,7 +62,7 @@ const dessertItems = [
 ];
 
 const Desserts = () => {
-  const { addToCart } = useCart(); // Get addToCart function from CartContext
+  const { addToCart } = useCart();
 
   return (
     <section className="px-6 py-6">

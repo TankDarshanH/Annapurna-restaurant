@@ -2,6 +2,7 @@ import Signup from "./Signup";
 import Login from "./Login";
 import { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
+import restaurantLogo from "../images/restaurant.png"; // ✅ Imported image properly
 
 const Heading = ({ onLoginSuccess, onLogout, loggedInUser }) => {
   const [showSignup, setShowSignup] = useState(false);
@@ -44,7 +45,7 @@ const Heading = ({ onLoginSuccess, onLogout, loggedInUser }) => {
       <div className="flex items-center gap-x-4">
         <Link to="/">
           <img
-            src="/src/images/restaurant.png"
+            src={restaurantLogo} // ✅ Using imported image
             alt="restaurant-Logo"
             className="wnpm-16 md:w-20 h-16 md:h-20 rounded-full p-2 cursor-pointer transition-transform duration-500 hover:scale-110 hover:brightness-125"
           />

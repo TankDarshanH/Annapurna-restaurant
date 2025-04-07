@@ -1,37 +1,47 @@
 import { useCart } from "../CartContext";
 
+// Image imports
+import patra from "../images/Gujrati-items/Patra.jpg";
+import dalMakhani from "../images/Punjabi-items/dal-makhani.jpg";
+import paneerButterMasala from "../images/Punjabi-items/paneer-butter-masala.webp";
+import idliSambar from "../images/South-indian/Idli-Sambar.jpg";
+import friedMomos from "../images/Fast-food/fried-momos.jpg";
+import paneerBiryani from "../images/Rice & Biryani/Paneer Biryani.webp";
+import mangoPudding from "../images/Desserts/MangoPudding.jpg";
+import mangoLassi from "../images/Beverages/mango-lassi.webp";
+
 const popularItems = [
   {
     id: 3,
-    image: "src/images/Gujrati-items/Patra.jpg",
+    image: patra,
     title: "Patra",
     price: 100,
     description: "250 gram",
   },
   {
     id: 10,
-    image: "src/images/Punjabi-items/dal-makhani.jpg",
+    image: dalMakhani,
     title: "Dal Makhani",
     price: 200,
     description: "500 gram",
   },
   {
     id: 11,
-    image: "src/images/Punjabi-items/paneer-butter-masala.webp",
+    image: paneerButterMasala,
     title: "Paneer Butter Masala",
     price: 225,
     description: "400 gram",
   },
   {
     id: 15,
-    image: "src/images/South-indian/Idli-Sambar.jpg",
+    image: idliSambar,
     title: "Idli Sambar",
     price: 50,
     description: "Idli 3 pcs , 1 Portion Of Sambar",
   },
   {
     id: 26,
-    image: "src/images/Fast-food/fried-momos.jpg",
+    image: friedMomos,
     title: "Fried Momos",
     price: 100,
     description:
@@ -39,7 +49,7 @@ const popularItems = [
   },
   {
     id: 29,
-    image: "src/images/Rice & Biryani/Paneer Biryani.webp",
+    image: paneerBiryani,
     title: "Paneer Biryani",
     price: 300,
     description:
@@ -47,14 +57,14 @@ const popularItems = [
   },
   {
     id: 41,
-    image: "src/images/Desserts/MangoPudding.jpg",
+    image: mangoPudding,
     title: "Mango Pudding",
     price: 300,
     description: "200 gram",
   },
   {
     id: 45,
-    image: "src/images/Beverages/mango-lassi.webp",
+    image: mangoLassi,
     title: "Mango Lassi",
     price: 75,
     description: "200 ml",
@@ -62,7 +72,7 @@ const popularItems = [
 ];
 
 const Popular = () => {
-  const { addToCart } = useCart(); // Get addToCart function from CartContext
+  const { addToCart } = useCart();
 
   return (
     <section className="px-6 py-6">

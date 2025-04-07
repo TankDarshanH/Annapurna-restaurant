@@ -1,9 +1,18 @@
 import { useCart } from "../CartContext";
 
+// Image imports
+import southIndianThali from "../images/South-indian/South Indian Thali.jpg";
+import idliSambar from "../images/South-indian/Idli-Sambar.jpg";
+import masalaDosa from "../images/South-indian/masala-dosa.webp";
+import meduvadaSambar from "../images/South-indian/Meduvada-sambar.jpg";
+import cheeseSpringDosa from "../images/South-indian/chese-spring-dosa.webp";
+import ravaDosa from "../images/South-indian/Rava-dosa.jpg";
+import onionTomatoUttapam from "../images/South-indian/onion-tomato-uttapam.jpg";
+
 const southIndianItems = [
   {
     id: 14,
-    image: "src/images/South-indian/South Indian Thali.jpg",
+    image: southIndianThali,
     title: "South Indian Thali",
     price: 300,
     description:
@@ -11,14 +20,14 @@ const southIndianItems = [
   },
   {
     id: 15,
-    image: "src/images/South-indian/Idli-Sambar.jpg",
+    image: idliSambar,
     title: "Idli Sambar",
     price: 50,
     description: "Idli 3 pcs, 1 Portion Of Sambar",
   },
   {
     id: 16,
-    image: "src/images/South-indian/masala-dosa.webp",
+    image: masalaDosa,
     title: "Masala Dosa",
     price: 100,
     description:
@@ -26,14 +35,14 @@ const southIndianItems = [
   },
   {
     id: 17,
-    image: "src/images/South-indian/Meduvada-sambar.jpg",
+    image: meduvadaSambar,
     title: "Meduvada Sambar",
     price: 60,
     description: "Meduvada 3 pcs, 1 Portion Of Sambar",
   },
   {
     id: 18,
-    image: "src/images/South-indian/chese-spring-dosa.webp",
+    image: cheeseSpringDosa,
     title: "Cheese Spring Dosa",
     price: 150,
     description:
@@ -41,7 +50,7 @@ const southIndianItems = [
   },
   {
     id: 19,
-    image: "src/images/South-indian/Rava-dosa.jpg",
+    image: ravaDosa,
     title: "Rava Dosa",
     price: 100,
     description:
@@ -49,7 +58,7 @@ const southIndianItems = [
   },
   {
     id: 20,
-    image: "src/images/South-indian/onion-tomato-uttapam.jpg",
+    image: onionTomatoUttapam,
     title: "Onion Tomato Uttapam",
     price: 125,
     description:
@@ -58,7 +67,7 @@ const southIndianItems = [
 ];
 
 const SouthIndian = () => {
-  const { addToCart } = useCart(); // Get addToCart function from CartContext
+  const { addToCart } = useCart();
 
   return (
     <section className="px-6 py-6">
