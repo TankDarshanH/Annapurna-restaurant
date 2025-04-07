@@ -4,7 +4,7 @@ const Main = () => {
   return (
     <div
       className="h-96 w-auto bg-cover bg-center"
-      style={{ backgroundImage: "url('/src/images/bg-image.png')" }}
+      style={{ backgroundImage: "url('/images/bg-image.png')" }}
     >
       <h1 className="text-white text-5xl font-bold text-center pt-50">
         Welcome to Annapurna Restaurant
@@ -17,7 +17,3 @@ const Main = () => {
 };
 
 export default Main;
-
-
-
-  
