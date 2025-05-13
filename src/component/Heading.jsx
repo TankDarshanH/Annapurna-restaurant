@@ -2,7 +2,7 @@ import Signup from "./Signup";
 import Login from "./Login";
 import { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
-import restaurantLogo from "../images/restaurant.png"; // ✅ Imported image properly
+import restaurantLogo from "../images/restaurant.png"; 
 
 const Heading = ({ onLoginSuccess, onLogout, loggedInUser }) => {
   const [showSignup, setShowSignup] = useState(false);
