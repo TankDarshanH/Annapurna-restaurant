@@ -1,77 +1,86 @@
 import { useState } from "react";
 
-const Signup = ({ onClose, onSignup }) => {
+const Signup = ({ onClose, onSuccess, onSwitchToLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleSignup = () => {
-    if (!email.includes("@")) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+
+    if (!emailRegex.test(email)) {
       alert("Please enter a valid email address.");
       return;
     }
-    if (password.length < 6) {
-      alert("Password must be at least 6 characters long.");
+
+    if (!passwordRegex.test(password)) {
+      alert(
+        "Password must be at least 8 characters and include uppercase, lowercase, number, and special character."
+      );
       return;
     }
+
     if (password !== confirmPassword) {
       alert("Passwords do not match.");
       return;
     }
 
     const users = JSON.parse(localStorage.getItem("users")) || [];
-    const existingUser = users.find((user) => user.email === email);
+    const existingUser = users.find((u) => u.email === email);
 
     if (existingUser) {
-      alert("Account already exists. Please log in.");
+      alert("User already exists. Please log in.");
+      onClose(); 
+      onSwitchToLogin(); 
       return;
     }
 
     const newUser = { email, password };
-    const updatedUsers = [...users, newUser];
-    localStorage.setItem("users", JSON.stringify(updatedUsers));
-
-    alert("Account created successfully! Please log in.");
-    onSignup(newUser); // Updating state in Heading
-    onClose();
+    users.push(newUser);
+    localStorage.setItem("users", JSON.stringify(users));
+    sessionStorage.setItem("loggedInUser", JSON.stringify(newUser));
+    alert("Signup successful!");
+    onSuccess(newUser);
+    onSwitchToLogin(); 
   };
 
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-opacity-50">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-96 text-center">
-        <h2 className="text-2xl font-bold mb-4">Sign Up</h2>
+    <div className="fixed inset-0 flex text-center items-center justify-center bg-gradient-to-r from-teal-500 to-indigo-600 bg-cover bg-center backdrop-blur-sm z-50 animate-fadeIn">
+      <div className="bg-white p-8 rounded-xl shadow-lg w-full max-w-md mx-4">
+        <h2 className="text-3xl font-bold mb-6">Sign Up</h2>
         <input
           type="email"
-          className="border p-2 w-full rounded mb-4"
-          placeholder="Enter your email"
+          placeholder="Email"
+          className="w-full p-3 border rounded mb-4"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
           type="password"
-          className="border p-2 w-full rounded mb-4"
-          placeholder="Enter your password"
+          placeholder="Password"
+          className="w-full p-3 border rounded mb-4"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
         <input
           type="password"
-          className="border p-2 w-full rounded mb-4"
-          placeholder="Confirm your password"
+          placeholder="Confirm Password"
+          className="w-full p-3 border rounded mb-6"
           value={confirmPassword}
           onChange={(e) => setConfirmPassword(e.target.value)}
         />
         <button
-          className="bg-blue-600 text-white px-4 py-2 rounded w-full"
           onClick={handleSignup}
+          className="w-full bg-green-600 text-white py-2 rounded mb-2"
         >
           Create Account
         </button>
         <button
-          className="bg-red-600 text-white px-4 py-2 rounded w-full mt-4"
           onClick={onClose}
+          className="w-full text-red-500 text-sm hover:underline"
         >
-          Close
+          Cancel
         </button>
       </div>
     </div>

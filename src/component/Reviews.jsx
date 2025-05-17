@@ -1,9 +1,9 @@
-import React, { useState, useContext } from "react";
+import { useState, useContext } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { ReviewsContext } from "../ReviewsContext"; // Import context
+import { ReviewsContext } from "../ReviewsContext"; 
 
 const Reviews = () => {
-  const { reviews, setReviews } = useContext(ReviewsContext); // Use global state
+  const { reviews, setReviews } = useContext(ReviewsContext); 
   const [newReview, setNewReview] = useState("");
   const [newRating, setNewRating] = useState(0);
 

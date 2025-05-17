@@ -15,39 +15,42 @@ import Cart from "./component/Cart";
 import { CartProvider } from "./CartContext";
 import Gallery from "./component/Gallery";
 import Reviews from "./component/Reviews";
-import { ReviewsProvider } from "./ReviewsContext"; // ✅ Corrected Import
+import { ReviewsProvider } from "./ReviewsContext";
+import Signup from "./component/Signup";
+import Login from "./component/Login";
 
 const App = () => {
   const [loggedInUser, setLoggedInUser] = useState(null);
+  const [showSignup, setShowSignup] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
 
-  // On app start, check sessionStorage for logged-in user
   useEffect(() => {
     const user = JSON.parse(sessionStorage.getItem("loggedInUser"));
-    setLoggedInUser(user);
+    if (user) setLoggedInUser(user);
   }, []);
 
-  // Handle user login
-  const handleLoginSuccess = (user) => {
-    sessionStorage.setItem("loggedInUser", JSON.stringify(user)); // Store in sessionStorage
-    setLoggedInUser(user);
-  };
-
-  // Handle user logout
   const handleLogout = () => {
-    sessionStorage.removeItem("loggedInUser"); // Remove from sessionStorage
+    sessionStorage.removeItem("loggedInUser");
     setLoggedInUser(null);
   };
 
   return (
     <CartProvider>
       <ReviewsProvider>
-       
         <div className="flex flex-col min-h-screen">
           <Heading
-            onLoginSuccess={handleLoginSuccess}
+            onLoginClick={() => {
+              setShowLogin(true);
+              setShowSignup(false);
+            }}
+            onSignupClick={() => {
+              setShowSignup(true);
+              setShowLogin(false);
+            }}
             onLogout={handleLogout}
             loggedInUser={loggedInUser}
           />
+
           <div className="flex-grow pt-24">
             <Routes>
               <Route
@@ -89,7 +92,36 @@ const App = () => {
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </div>
+
           <Footer className="fixed bottom-0 w-full bg-white shadow-md" />
+
+          {showSignup && (
+            <Signup
+              onClose={() => setShowSignup(false)}
+              onSuccess={(user) => {
+                setLoggedInUser(user);
+                setShowSignup(false);
+              }}
+              onSwitchToLogin={() => {
+                setShowLogin(true);
+                setShowSignup(false);
+              }}
+            />
+          )}
+
+          {showLogin && (
+            <Login
+              onClose={() => setShowLogin(false)}
+              onSuccess={(user) => {
+                setLoggedInUser(user);
+                setShowLogin(false);
+              }}
+              onSwitchToSignup={() => {
+                setShowSignup(true);
+                setShowLogin(false);
+              }}
+            />
+          )}
         </div>
       </ReviewsProvider>
     </CartProvider>
