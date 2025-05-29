@@ -1,6 +1,6 @@
 # 🍽️ Annapurna Restaurant Web App
 
-[🌐 Live Demo](https://annapurna-restaurant.netlify.app/) <!-- Replace with your actual live URL -->
+[🌐 Live Demo](https://annapurna-restaurant.netlify.app//) <!-- Replace with your actual live URL -->
 
 Annapurna is a modern, responsive restaurant web application built using **React.js** and **Tailwind CSS**. It features a dynamic menu, user authentication, a shopping cart, and a review system to enhance the digital dining experience.
 
